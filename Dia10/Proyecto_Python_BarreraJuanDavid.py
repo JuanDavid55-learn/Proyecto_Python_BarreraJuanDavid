@@ -11,6 +11,7 @@ listaDeGastos = abrirJSON()
 
 boleanito= True
 
+
 while(boleanito):
     listaDeGastos = abrirJSON()
     print("=============================================")
