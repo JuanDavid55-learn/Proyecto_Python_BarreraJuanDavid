@@ -3,17 +3,19 @@
 #########################
 
 #proyecto 1
-# Menú Principal del Simulador de Gasto Diario
+
 from funciones import *
-
-
-listaDeGastos = abrirJSON()
+from tabulate import tabulate
+import datetime
+fecha_actual = datetime.date.today()
 
 boleanito= True
-
-
 while(boleanito):
     listaDeGastos = abrirJSON()
+    listaDeGastos=hallarFecha()
+    
+    # Menú Principal del Simulador de Gasto Diario
+    listaDeGastos=abrirJSON()
     print("=============================================")
     print("         Simulador de Gasto Diario           ")
     print("=============================================")
@@ -27,39 +29,46 @@ while(boleanito):
     print("=============================================")
     opcion=int(input("que desea hacer?: "))
     if (opcion==1):# 1. Registrar Nuevos Gastos  
-        
-        
+        print(" ")
+        print(" ")
         print("=============================================")
         print("        Registrar Nuevo Gasto               ")
         print("=============================================")
         print("Ingrese la información del gasto:")
         print(" ")
+        fechaFormateada = fecha_actual.strftime("%Y-%m-%d %H:%M:%S") # %Y: año, %m: mes, %d: día, %H: hora, %M: minuto, %S: segund
+        
         montoGasto=int(input("- Monto del gasto: "))
         categoriaGasto=str(input("- Categoría (ej. comida, transporte, entretenimiento, otros):"))
         descripcionGasto=str(input("- Descripción (opcional):"))
         nuevoGasto={
+            "fecha":fechaFormateada,
             "monto del gasto":montoGasto,
             "categoria":categoriaGasto,
             "Descripción":descripcionGasto
         }
-            
+        
         print(" ")
         guardarGasto=str(input("Ingrese 'S' para guardar o 'C' para cancelar."))
         if (guardarGasto=="s"):
             listaDeGastos.append(nuevoGasto)
             guardarJSON(listaDeGastos)
             nuevoGasto={}
-            
+            print("")
+            print("")
 
         elif (guardarGasto=="c"):
             print("=============================================")
-            print(" ")
+            print("")
+            print("")
         else:
             print("opcion no valida, vuelva a intentar")
 
               
     
     elif (opcion==2):# 2. Listar gastos
+        print("")
+        print("")
         print("=============================================")
         print("               Listar Gastos                 ")
         print("=============================================")
@@ -73,33 +82,44 @@ while(boleanito):
         opcionListarGastos=int(input("que desea hacer?"))
         
         if (opcionListarGastos==1):
-            for i in range(len(listaDeGastos)):
-                print("######################")
-                print("#### Gasto #####")
-                print("######################")
-                print("monto del gasto:", listaDeGastos[i]["monto del gasto"])
-                print("categoria:", listaDeGastos[i]["categoria"])
-                print("Descripción:",listaDeGastos[i]["Descripción"])
-                print("---------------------------")
+           print(listaDeGastos)
         elif (opcionListarGastos==2):
-            listaCategoriaGasto=[]
-            gastoCatComida={}
-            gastoCatTransporte={}
-            gastoCatEntretenimiento={}
-            gastoCatOtros={}
+            gastoCatComida=[]
+            gastoCatTransporte=[]
+            gastoCatEntretenimiento=[]
+            gastoCatOtros=[]
             for i in range(len(listaDeGastos)):
-                if (listaDeGastos[i]["categoria"]==comida):
+                if (listaDeGastos[i]["categoria"]=="comida"):
                         gastoCatComida.append(listaDeGastos[i])
-                elif (listaDeGastos[i]["categoria"==transporte]):
+                elif (listaDeGastos[i]["categoria"]=="transporte"):
                         gastoCatTransporte.append(listaDeGastos[i])
-                elif (listaDeGastos[i]["categoria"]==entretenimiento):
+                elif (listaDeGastos[i]["categoria"]=="entretenimiento"):
                         gastoCatEntretenimiento.append(listaDeGastos[i])
-                elif (listaDeGastos[i]["categoria"]==otros):
+                elif (listaDeGastos[i]["categoria"]=="otros"):
                         gastoCatOtros.append(listaDeGastos[i])
-                    
-            listaCategoriaGasto.append[gastoCatComida,gastoCatTransporte,gastoCatEntretenimiento,]
-                    
+            
+            print("comida:")        
+            print(gastoCatComida)
+            print("")
+            print("transporte:")
+            print(gastoCatTransporte)
+            print("")
+            print("entretenimiento:")
+            print(gastoCatEntretenimiento)
+            print("")
+            print("otros:")
+            print(gastoCatOtros)
+            
+        elif (opcionListarGastos==3):
+            listasPorFechas = sorted(listaDeGastos, key=lambda x: x["fecha"])
+            print(listasPorFechas)
+               
+        elif (opcionListarGastos==4):
+            print("")
+    
     elif (opcion==3):# 3. Calcular total de gastos
+        print("")
+        print("")
         print("=============================================")
         print("        Calcular Total de Gastos             ")      
         print("=============================================")
@@ -110,8 +130,20 @@ while(boleanito):
         print("3. Calcular total mensual")
         print("4. Regresar al menú principal")
         print("=============================================")
+        opcionCalcularGastos=int(input("que desea hacer?"))
+        if (opcionCalcularGastos==1):
+            print
+
+        elif (opcionCalcularGastos==2):
+            print####
+        elif(opcionCalcularGastos==3):
+            print###
+        elif(opcionCalcularGastos==4):
+            print("")
     
     elif (opcion==4):# 4. Generar reporte de gastos
+        print("")
+        print("")
         print("=============================================")
         print("       Generar Reporte de Gastos             ")
         print("=============================================")
@@ -122,12 +154,22 @@ while(boleanito):
         print("3. Reporte mensual")
         print("4. Regresar al menú principal")
         print("=============================================")
+        opcionReporteGastos=int(input("que desea hacer?"))
+        if (opcionReporteGastos==1):
+             print####
+        elif (opcionReporteGastos==2):
+             print####
+        elif(opcionReporteGastos==3):
+             print###
+        elif(opcionReporteGastos==4):
+             print("")
     
     elif (opcion==5):# 5. Salir
             
             salirONo=str(input("¿Desea salir del programa? (S/N): \n"))
             if ((salirONo=="s") or (salirONo=="S")):
                 boleanito= False
+                print("hasta la proxima")
             elif ((salirONo=="n") or (salirONo=="N")):
                 print(" ")
             else:
