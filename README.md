@@ -1,14 +1,11 @@
-# Título
-Esta de una decripción
+# Proyecto_Python_BarreraJuanDavid
+mi primer proyecto de python. monitor de gastos
 
 ## Tabla de contenidos
 | Indice | Titulo  |
 |--|--|
-| 1 | Sección 1 |
-| 2 | Sección 2 |
-| 3 | Sección 3 |
-| 4 | Sección 4 |
-| 5 | Sección 5 |
+|Instalación |python3|
+|Explicación |registra y monitorea gastos diarios en diferentes categorías, como comida, transporte, entretenimiento, y otros. Toda la información se guarda en un archivo JSON  |
 
 ### Instalaciones 
 Deberas ejecutar este comando para descargar 
@@ -25,7 +22,7 @@ sudo apt install app
 - Ítem 2
 - Ítem 3
 
-Hecho por [algunapersona](https://algunapersonaenestemundo)
+Hecho por [Juan David Barrera Torres](https://algunapersonaenestemundo)
 
 >Este texto será una cita.
 > [!NOTE]
