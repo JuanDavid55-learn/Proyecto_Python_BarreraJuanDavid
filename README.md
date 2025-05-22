@@ -7,20 +7,8 @@ mi primer proyecto de python. monitor de gastos
 |Instalación |python3|
 |Explicación |registra y monitorea gastos diarios en diferentes categorías, como comida, transporte, entretenimiento, y otros. Toda la información se guarda en un archivo JSON  |
 
-### Instalaciones 
-Deberas ejecutar este comando para descargar 
-
-```bash
-sudo apt install app
-```
-
 ### video  Explicación-proyecto
-![video](./gato.png)
-
-### Sección 
-- Ítem 1
-- Ítem 2
-- Ítem 3
+![https://youtu.be/Cr8qQVwd_Zo](./video)
 
 Hecho por [Juan David Barrera Torres]
 
