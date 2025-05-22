@@ -14,15 +14,15 @@ Deberas ejecutar este comando para descargar
 sudo apt install app
 ```
 
-### Como se juega 
-![imagen gato](./gato.png)
+### video  Explicación-proyecto
+![video](./gato.png)
 
 ### Sección 
 - Ítem 1
 - Ítem 2
 - Ítem 3
 
-Hecho por [Juan David Barrera Torres](https://algunapersonaenestemundo)
+Hecho por [Juan David Barrera Torres]
 
 >Este texto será una cita.
 > [!NOTE]
