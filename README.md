@@ -8,7 +8,7 @@ mi primer proyecto de python. monitor de gastos
 |Explicación |registra y monitorea gastos diarios en diferentes categorías, como comida, transporte, entretenimiento, y otros. Toda la información se guarda en un archivo JSON  |
 
 ### video  Explicación-proyecto
-![https://youtu.be/Cr8qQVwd_Zo](./video)
+![https://youtu.be/Cr8qQVwd_Zo]
 
 Hecho por [Juan David Barrera Torres]
 
